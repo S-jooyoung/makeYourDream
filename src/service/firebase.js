@@ -1,16 +1,16 @@
 //Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalyics } from "firebase/analytics";
+import firebase from "firebase/app";
+import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 
 // My web app's Firebase configureation
 const firebaseConfig = {
-  apiKey: REACT_APP_FIREBASE_API_KEY,
-  authDomain: REACT_APP_FIREBASE_DOMAIN,
-  projectId: REACT_APP_FIREBASE_ID,
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_ID,
 };
 
 //Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
-const analytics = getAnalyics(App);
 
-export default firebaseApp;
+export const googleProvider = new GoogleAuthProvider();
+export const githubProvider = new GithubAuthProvider();

@@ -1,3 +1,9 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import { googleProvider, githubProvider } from "./firebase";
+import { getAuth, signInWithPopup } from "firebase/auth";
 
-const provider = new GoogleAuthProvider();
+class AuthService {
+  login(providerName) {
+    const auth = getAuth();
+    return signInWithPopup(providerName);
+  }
+}
