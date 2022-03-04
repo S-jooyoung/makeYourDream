@@ -1,15 +1,17 @@
-@value makeBlack: #2F4858;
+@value makeBlack:#4C4452;
 
-@value makeWhite: #F5F5F5;
+@value makeWhite:#F5F5F5;
 
 @value makePurple:#8a49cb;
 
-@value makeLightPurple: #AF93C5;
+@value makeDarkPurple:#aea1bc;
 
-@value makeRed: #E38390;
+@value makeLightPurple:#AF93C5;
 
-@value makeWine: #B47399;
+@value makeGrey:#B1A8B9;
 
-@value makeBlue: #4D5A7A;
+@value makeWine:#B47399;
 
-@value makeDeepBlue: ##2F4858;
+@value makeBlue:#4D5A7A;
+
+@value makeDeepBlue:#2F4858;

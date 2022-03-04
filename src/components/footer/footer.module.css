@@ -1,0 +1,13 @@
+@value makeWhite from "../../common/colors.css";
+
+.footer {
+  width: 100%;
+
+  text-align: center;
+  padding: 0.5em;
+}
+
+.content {
+  margin: 0;
+  font-size: 1rem;
+}

@@ -1,0 +1,16 @@
+@value makeWhite,makeBlack from "../../common/colors.css";
+
+.header {
+  width: 100%;
+  padding: 0.5em;
+
+  position: relative;
+}
+
+.logo {
+  width: 10em;
+}
+
+.title {
+  margin: 0;
+}

@@ -12,6 +12,7 @@ class AuthService {
     this.githubProvider = new GithubAuthProvider();
   }
 
+  // 로그인 기능
   login(providerName) {
     const authProvider = this.getProvider(providerName);
     return signInWithPopup(this.firebaseAuth, authProvider).then((result) => {
@@ -19,12 +20,13 @@ class AuthService {
     });
   }
 
+  // 로그인의 타입을 정하는 기능
   getProvider(providerName) {
     switch (providerName) {
-      case "Google":
+      case "GOOGLE":
         return this.googleProvider;
 
-      case "Github":
+      case "GITHUB":
         return this.githubProvider;
 
       default:
