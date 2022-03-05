@@ -1,8 +1,8 @@
 @value makeLightGrey,makePurple,makeDarkPurple,makeLightPurple from "../../common/colors.css";
 
 .wrap {
-  width: 30em;
-  border-radius: 0.5rem;
+  width: 20em;
+  border-radius: 0.25rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,6 @@
   display: flex;
   justify-content: center;
   padding: 0.1em;
-  margin: 0;
 }
 
 .snsitem {
@@ -38,8 +37,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10rem;
-  height: 2.5rem;
+  width: 10em;
+  height: 2.5em;
   font-size: 1.2rem;
   outline: 0;
   cursor: pointer;
@@ -86,7 +85,7 @@
   color: makeDarkPurple;
   text-align: center;
   font-size: 0.8rem;
-  margin: 0.5rem;
+  margin: 0.5em;
 }
 
 .emailitem {
@@ -101,8 +100,8 @@
 }
 
 .emailinput {
-  width: 25rem;
-  height: 2.5rem;
+  width: 20em;
+  height: 2.5em;
   border: none;
   outline: 0;
 }
