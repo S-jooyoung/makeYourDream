@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faUnlock } from "@fortawesome/free-solid-svg-icons";
 
 import React from "react";
 import Footer from "../footer/footer";
@@ -7,20 +8,21 @@ import Header from "../header/header";
 import styles from "./login.module.css";
 
 const Login = ({ authservice }) => {
-  const onLogin = (event) => {
+  //SNS 로그인
+  const snsLogin = (event) => {
     console.log(event.target.textContent);
     authservice //
-      .login(event.target.textContent);
+      .snsLogin(event.target.textContent);
   };
 
   return (
-    <section className={styles.login}>
+    <section className={styles.wrap}>
       <Header />
-      <section>
-        <h1 className={styles.title}>SNS 연결</h1>
+      <section className={styles.login}>
+        <h1 className={styles.snstitle}>SNS 연결</h1>
         <ul className={styles.snslist}>
           <li className={styles.snsitem}>
-            <button className={styles.button} onClick={onLogin}>
+            <button className={styles.button} onClick={snsLogin}>
               <img
                 className={styles.google}
                 src="/images/Google.png"
@@ -30,14 +32,38 @@ const Login = ({ authservice }) => {
             </button>
           </li>
           <li className={styles.snsitem}>
-            <button className={styles.button} onClick={onLogin}>
+            <button className={styles.button} onClick={snsLogin}>
               <FontAwesomeIcon className={styles.github} icon={faGithub} />
               GITHUB
             </button>
           </li>
         </ul>
+        <ul className={styles.emaillist}>
+          <h1 className={styles.emailtitle}> 로그인 하기</h1>
+          <li className={styles.emailitem}>
+            <FontAwesomeIcon className={styles.inputicon} icon={faEnvelope} />
+            <input
+              className={styles.emailinput}
+              type="email"
+              placeholder="이메일을 입력하세요"
+            />
+          </li>
+          <li className={styles.emailitem}>
+            <FontAwesomeIcon className={styles.inputicon} icon={faUnlock} />
+            <input
+              className={styles.emailinput}
+              type="password"
+              placeholder="비밀번호를 입력하세요"
+            />
+          </li>
+          <li className={styles.emailbuttonwrap}>
+            <button className={styles.emailbutton}>로그인 하기</button>
+          </li>
+        </ul>
       </section>
-      <Footer />
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </section>
   );
 };

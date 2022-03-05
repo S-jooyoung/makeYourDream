@@ -3,6 +3,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 
 class AuthService {
@@ -12,10 +14,29 @@ class AuthService {
     this.githubProvider = new GithubAuthProvider();
   }
 
-  // 로그인 기능
-  login(providerName) {
+  // sns 로그인 기능
+  snsLogin(providerName) {
     const authProvider = this.getProvider(providerName);
     return signInWithPopup(this.firebaseAuth, authProvider).then((result) => {
+      console.log(result);
+    });
+  }
+
+  // email 로그인 기능
+  emailLogin(email, password) {
+    signInWithEmailAndPassword(this.firebaseAuth, email, password).then(
+      (result) => {
+        console.log(result);
+      }
+    );
+  }
+  // 계정생성
+  createUser(email, password) {
+    return createUserWithEmailAndPassword(
+      this.firebaseAuth,
+      email,
+      password
+    ).then((result) => {
       console.log(result);
     });
   }
