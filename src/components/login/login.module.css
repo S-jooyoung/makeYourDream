@@ -79,6 +79,7 @@
   padding: 0.2em;
   background-color: makeLightGrey;
   margin: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .emailtitle {
@@ -111,12 +112,6 @@
   color: grey;
 }
 
-.footer {
-  background-color: makeLightGrey;
-  border-radius: 0.5rem;
-  color: makeLightPurple;
-}
-
 .emailbuttonwrap {
   display: flex;
   justify-content: center;
@@ -147,4 +142,34 @@
 .emailbutton:hover {
   opacity: 0.8;
   transform: translateY(-0.1em);
+}
+
+.nav {
+  position: relative;
+}
+
+.linkfind {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.linkfind:hover {
+  opacity: 0.8;
+}
+
+.linklogin {
+  position: absolute;
+  top: 1em;
+  right: 0;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.linklogin:hover {
+  opacity: 0.8;
 }

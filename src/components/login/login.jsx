@@ -1,8 +1,15 @@
+//Basic
+import React from "react";
+
+//Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faUnlock } from "@fortawesome/free-solid-svg-icons";
 
-import React from "react";
+//React-router
+import { Link } from "react-router-dom";
+
+//Component
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import styles from "./login.module.css";
@@ -60,10 +67,15 @@ const Login = ({ authservice }) => {
             <button className={styles.emailbutton}>로그인 하기</button>
           </li>
         </ul>
+        <nav className={styles.nav}>
+          <Link className={styles.linkfind} to="">
+            계정찾기
+          </Link>
+          <Link className={styles.linklogin} to="join">
+            계정생성
+          </Link>
+        </nav>
       </section>
-      <div className={styles.footer}>
-        <Footer />
-      </div>
     </section>
   );
 };
