@@ -12,5 +12,5 @@
   align-items: center;
   justify-content: center;
   background-image: url(../public/images/appBackground.svg);
-  background-size: 100%;
+  background-size: cover;
 }

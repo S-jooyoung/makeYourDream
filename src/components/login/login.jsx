@@ -1,5 +1,5 @@
 //Basic
-import React from "react";
+import React, { useRef } from "react";
 
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,16 +10,26 @@ import { faEnvelope, faUnlock } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 //Component
-import Footer from "../footer/footer";
 import Header from "../header/header";
 import styles from "./login.module.css";
 
 const Login = ({ authservice }) => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
   //SNS 로그인
   const snsLogin = (event) => {
     console.log(event.target.textContent);
     authservice //
       .snsLogin(event.target.textContent);
+  };
+
+  //이메일 로그인
+  const onSubmit = () => {
+    console.log(emailRef.current.value);
+    console.log(passwordRef.current.value);
+    authservice //
+      .emailLogin(emailRef.current.value, passwordRef.current.value);
   };
 
   return (
@@ -50,6 +60,7 @@ const Login = ({ authservice }) => {
           <li className={styles.emailitem}>
             <FontAwesomeIcon className={styles.inputicon} icon={faEnvelope} />
             <input
+              ref={emailRef}
               className={styles.emailinput}
               type="email"
               placeholder="이메일을 입력하세요"
@@ -58,13 +69,16 @@ const Login = ({ authservice }) => {
           <li className={styles.emailitem}>
             <FontAwesomeIcon className={styles.inputicon} icon={faUnlock} />
             <input
+              ref={passwordRef}
               className={styles.emailinput}
               type="password"
               placeholder="비밀번호를 입력하세요"
             />
           </li>
           <li className={styles.emailbuttonwrap}>
-            <button className={styles.emailbutton}>로그인 하기</button>
+            <button className={styles.emailbutton} onClick={onSubmit}>
+              로그인 하기
+            </button>
           </li>
         </ul>
         <nav className={styles.nav}>

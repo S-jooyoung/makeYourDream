@@ -7,8 +7,8 @@ function App({ authservice }) {
     <div className={styles.app}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login authservice={authservice} />}></Route>
-          <Route path="join" element={<Join />} />
+          <Route path="/" element={<Login authservice={authservice} />} />
+          <Route path="join" element={<Join authservice={authservice} />} />
         </Routes>
       </BrowserRouter>
     </div>
