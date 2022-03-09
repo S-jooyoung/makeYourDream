@@ -1,5 +1,5 @@
 //Basic
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 //Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,30 +7,44 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faUnlock } from "@fortawesome/free-solid-svg-icons";
 
 //React-router
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Component
 import Header from "../header/header";
 import styles from "./login.module.css";
 
 const Login = ({ authservice }) => {
+  let navigate = useNavigate();
+
   const emailRef = useRef();
   const passwordRef = useRef();
 
+  //메인화면 이동
+  const goToMain = (userId) => {
+    navigate("main", { state: { userId } });
+  };
+
   //SNS 로그인
   const snsLogin = (event) => {
-    console.log(event.target.textContent);
     authservice //
-      .snsLogin(event.target.textContent);
+      .snsLogin(event.target.textContent) //
+      .then((data) => goToMain(data.user.uid));
   };
 
   //이메일 로그인
-  const onSubmit = () => {
-    console.log(emailRef.current.value);
-    console.log(passwordRef.current.value);
+  const emailLogin = () => {
     authservice //
-      .emailLogin(emailRef.current.value, passwordRef.current.value);
+      .emailLogin(emailRef.current.value, passwordRef.current.value) //
+      .then((data) => goToMain(data.user.uid));
   };
+
+  //유저정보 있을 시 메인화면 자동전환
+  useEffect(() => {
+    authservice //
+      .onAuthChange((user) => {
+        user && goToMain(user.id);
+      });
+  });
 
   return (
     <section className={styles.wrap}>
@@ -76,7 +90,7 @@ const Login = ({ authservice }) => {
             />
           </li>
           <li className={styles.emailbuttonwrap}>
-            <button className={styles.emailbutton} onClick={onSubmit}>
+            <button className={styles.emailbutton} onClick={emailLogin}>
               로그인 하기
             </button>
           </li>

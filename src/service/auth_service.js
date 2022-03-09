@@ -5,6 +5,7 @@ import {
   GithubAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 class AuthService {
@@ -17,27 +18,23 @@ class AuthService {
   // sns 로그인 기능
   snsLogin(providerName) {
     const authProvider = this.getProvider(providerName);
-    return signInWithPopup(this.firebaseAuth, authProvider).then((result) => {
-      console.log(result);
-    });
+    return signInWithPopup(this.firebaseAuth, authProvider);
   }
 
   // email 로그인 기능
   emailLogin(email, password) {
-    signInWithEmailAndPassword(this.firebaseAuth, email, password).then(
-      (result) => {
-        console.log(result);
-      }
-    );
+    return signInWithEmailAndPassword(this.firebaseAuth, email, password);
   }
+
   // 계정생성
   createUser(email, password) {
-    return createUserWithEmailAndPassword(
-      this.firebaseAuth,
-      email,
-      password
-    ).then((result) => {
-      console.log(result);
+    return createUserWithEmailAndPassword(this.firebaseAuth, email, password);
+  }
+
+  // 로그인 유지
+  onAuthChange(onUserChanged) {
+    onAuthStateChanged(this.firebaseAuth, (user) => {
+      onUserChanged(user);
     });
   }
 
