@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 
 class AuthService {
@@ -36,6 +37,11 @@ class AuthService {
     onAuthStateChanged(this.firebaseAuth, (user) => {
       onUserChanged(user);
     });
+  }
+
+  // 로그아웃
+  logout() {
+    signOut(this.firebaseAuth);
   }
 
   // 로그인의 타입을 정하는 기능

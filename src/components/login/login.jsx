@@ -21,7 +21,7 @@ const Login = ({ authservice }) => {
 
   //메인화면 이동
   const goToMain = (userId) => {
-    navigate("main", { state: { userId } });
+    navigate("main", { state: { id: userId } });
   };
 
   //SNS 로그인
