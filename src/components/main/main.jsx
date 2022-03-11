@@ -27,8 +27,9 @@ const Main = ({ authservice }) => {
   });
 
   return (
-    <section>
+    <section className={styles.main}>
       <Header onLogout={onLogout} />
+      <section className={styles.content}>콘텐츠입니다.</section>
       <Footer />
     </section>
   );

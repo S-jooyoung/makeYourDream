@@ -13,3 +13,9 @@
 .title {
   margin: 0;
 }
+
+.logoutBtn {
+  position: absolute;
+  right: 3em;
+  top: 0.8em;
+}
