@@ -1,0 +1,19 @@
+@value makeLightPurple from "../../common/colors.css";
+
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.col {
+  display: flex;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  margin-top: 1em;
+  font-size: 1.2em;
+  background-color: makeLightPurple;
+}

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
+import Mandart from "../mandart/mandart";
 import styles from "./main.module.css";
 
 const Main = ({ authservice }) => {
@@ -29,7 +30,9 @@ const Main = ({ authservice }) => {
   return (
     <section className={styles.main}>
       <Header onLogout={onLogout} />
-      <section className={styles.content}>콘텐츠입니다.</section>
+      <section className={styles.content}>
+        <Mandart />
+      </section>
       <Footer />
     </section>
   );
