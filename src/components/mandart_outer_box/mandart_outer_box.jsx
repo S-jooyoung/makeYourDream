@@ -1,10 +1,14 @@
 import React from "react";
-import styles from "./mandart_box.module.css";
+import styles from "./mandart_outer_box.module.css";
 
-const MandartBox = (props) => {
+const MandartOuterBox = (props) => {
   return (
     <form className={styles.form}>
-      <textarea name="message" className={styles.textarea} rows="2"></textarea>
+      <textarea
+        name="message"
+        className={`${styles.textarea} ${styles.outerarea}`}
+        rows="2"
+      ></textarea>
       <textarea name="message" className={styles.textarea} rows="2"></textarea>
       <textarea name="message" className={styles.textarea} rows="2"></textarea>
       <textarea name="message" className={styles.textarea} rows="2"></textarea>
@@ -21,4 +25,4 @@ const MandartBox = (props) => {
   );
 };
 
-export default MandartBox;
+export default MandartOuterBox;

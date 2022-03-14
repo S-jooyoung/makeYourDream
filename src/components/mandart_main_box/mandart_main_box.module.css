@@ -1,4 +1,4 @@
-@value makePurple from "../../common/colors.css";
+@value makeShinePurple,makeLightYellow from "../../common/colors.css";
 
 .form {
   display: flex;
@@ -18,6 +18,10 @@
   resize: none;
 }
 
+.outerarea {
+  background: makeShinePurple;
+}
+
 .mainarea {
-  background: makePurple;
+  background: makeLightYellow;
 }

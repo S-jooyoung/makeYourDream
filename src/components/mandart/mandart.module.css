@@ -2,8 +2,9 @@
 
 .section {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  width: 100%;
+  max-width: 80rem;
 }
 .col {
   display: flex;
