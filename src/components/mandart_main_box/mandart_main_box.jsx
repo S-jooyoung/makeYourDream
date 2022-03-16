@@ -13,7 +13,7 @@ const MandartMainBox = (props) => {
         className={`${styles.textarea} ${styles.outerarea}`}
         rows="2"
       />
-      <textarea
+      <textareama
         name="message"
         className={`${styles.textarea} ${styles.outerarea}`}
         rows="2"

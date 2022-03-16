@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Banner from "../banner/banner";
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
@@ -12,6 +13,7 @@ const Main = ({ authservice }) => {
 
   const navigate = useNavigate();
 
+  //로그아웃
   const onLogout = () => {
     authservice.logout();
   };
@@ -28,13 +30,11 @@ const Main = ({ authservice }) => {
   });
 
   return (
-    <section className={styles.main}>
+    <div className={styles.wrap}>
       <Header onLogout={onLogout} />
-      <section className={styles.content}>
-        <Mandart />
-      </section>
+      <section className={styles.content}>콘텐츠 박스입니다.</section>
       <Footer />
-    </section>
+    </div>
   );
 };
 

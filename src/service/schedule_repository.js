@@ -5,7 +5,7 @@ class ScheduleRepository {
     this.firebaseDatabasae = getDatabase(app);
   }
 
-  saveSchedule(userId, card) {
+  saveSchedule(userId, schedule) {
     set(
       ref(
         this.firebaseDatabasae,
