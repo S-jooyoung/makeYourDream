@@ -4,7 +4,6 @@ import Banner from "../banner/banner";
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
-import Mandart from "../mandart/mandart";
 import styles from "./main.module.css";
 
 const Main = ({ authservice }) => {
@@ -32,7 +31,15 @@ const Main = ({ authservice }) => {
   return (
     <div className={styles.wrap}>
       <Header onLogout={onLogout} />
-      <section className={styles.content}>콘텐츠 박스입니다.</section>
+      <section className={styles.content}>
+        <Banner
+          title={"계획 만들기"}
+          description={
+            "다양한 신년계획을 제공하는 무료 신년계획만들기 메이크드림(MakeDream}입니다. 하단에 있는 원하시는 계획표를 선택 해 주세요."
+          }
+        />
+        콘텐츠 박스입니다.
+      </section>
       <Footer />
     </div>
   );
