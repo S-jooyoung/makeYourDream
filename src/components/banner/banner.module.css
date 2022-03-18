@@ -16,13 +16,16 @@
   );
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 3rem;
+  padding: 1rem;
   color: #fff;
   border-radius: 1rem;
 }
 
 .title {
+  text-align: center;
 }
 
 .description {
+  text-align: center;
 }

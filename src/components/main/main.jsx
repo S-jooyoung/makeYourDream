@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Banner from "../banner/banner";
+import Button from "../button/button";
 
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import styles from "./main.module.css";
 
-const Main = ({ authservice }) => {
+const Main = ({ authservice, pptmaker }) => {
   const navigateState = useNavigate().state;
   const [userId, setUserId] = useState(navigateState && navigateState.id);
 
@@ -38,7 +39,7 @@ const Main = ({ authservice }) => {
             "다양한 신년계획을 제공하는 무료 신년계획만들기 메이크드림(MakeDream}입니다. 하단에 있는 원하시는 계획표를 선택 해 주세요."
           }
         />
-        콘텐츠 박스입니다.
+        <Button name={"데모"} onClick={(_ev) => pptmaker.mandart()}></Button>
       </section>
       <Footer />
     </div>
