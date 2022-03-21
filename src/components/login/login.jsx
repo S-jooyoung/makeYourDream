@@ -44,7 +44,7 @@ const Login = ({ authservice }) => {
       .onAuthChange((user) => {
         user && goToMain(user.id);
       });
-  });
+  }, [authservice]);
 
   return (
     <section className={styles.wrap}>

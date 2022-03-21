@@ -27,7 +27,7 @@ const Main = ({ authservice, pptmaker }) => {
         navigate("/");
       }
     });
-  });
+  }, [authservice, navigate]);
 
   return (
     <div className={styles.wrap}>
@@ -36,7 +36,7 @@ const Main = ({ authservice, pptmaker }) => {
         <Banner
           title={"계획 만들기"}
           description={
-            "다양한 신년계획을 제공하는 무료 신년계획만들기 메이크드림(MakeDream}입니다. 하단에 있는 원하시는 계획표를 선택 해 주세요."
+            "다양한 신년계획을 제공하는 무료 신년계획만들기 메이크드림(MakeDream)입니다. 하단에 있는 원하시는 계획표를 선택 해 주세요."
           }
         />
         <div className={styles.articleWrap}>
