@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 //Components
-import Banner from "../banner/banner";
 import Footer from "../footer/footer";
 import Header from "../header/header";
-import Schedule from "../schedule/schedule";
 import ScheduleMaker from "../schedulemaker/schedulemaker";
 import styles from "./main.module.css";
 
@@ -34,7 +32,10 @@ const Main = ({ authservice, pptmaker }) => {
   return (
     <div className={styles.wrap}>
       <Header onLogout={onLogout} />
-      <ScheduleMaker pptmaker={pptmaker} />
+      <section className={styles.content}>
+        <ScheduleMaker pptmaker={pptmaker} />
+      </section>
+
       <Footer />
     </div>
   );
