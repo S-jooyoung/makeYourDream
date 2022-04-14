@@ -1,4 +1,5 @@
 @value makeWhite,makeBlack from "../../common/colors.css";
+@value mediaQuery from "../../common/size.css";
 
 .header {
   width: 100%;
@@ -20,4 +21,14 @@
   position: absolute;
   right: 3em;
   top: 1.4em;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .logo {
+    width: 8em;
+  }
+  .logoutBtn {
+    right: 1em;
+    top: 1em;
+  }
 }

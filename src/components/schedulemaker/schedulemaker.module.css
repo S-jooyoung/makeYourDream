@@ -1,6 +1,17 @@
+@value mediaQuery from "../../common/size.css";
+
 .schedules {
   list-style: none;
   padding: 0;
   margin: 2rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .schedules {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
 }

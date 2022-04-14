@@ -1,7 +1,7 @@
 @value makeGrey,makeShadow from "../../common/colors.css";
 
 .schedule {
-  flex-basis: 50%;
+  flex-basis: 46%;
   padding: 0.5em 2em;
   margin: 1rem;
   display: flex;
@@ -18,4 +18,10 @@
 
 .info {
   font-size: 1rem;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .schedule {
+    flex-basis: 100%;
+  }
 }
