@@ -1,3 +1,4 @@
+@value makeGrey,makeShadow from "../../common/colors.css";
 @value mediaQuery from "../../common/size.css";
 
 .schedules {
@@ -7,6 +8,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.schedule {
+  position: relative;
+  flex-basis: 46%;
+  padding: 0.5em 2em;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: makeGrey;
+  box-shadow: 6px 6px 8px 0px makeShadow;
+}
+
+.button {
+  position: absolute;
+  bottom: 0.5em;
 }
 
 @media screen and (max-width: mediaQuery) {
