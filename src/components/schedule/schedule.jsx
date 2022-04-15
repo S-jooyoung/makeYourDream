@@ -6,7 +6,11 @@ const Schedule = ({ pptmaker, title, info }) => (
   <li className={styles.schedule}>
     <h1 className={styles.title}>{title}</h1>
     <p className={styles.info}>{info}</p>
-    <Button name={"다운로드"} onClick={(_ev) => pptmaker.mandart()}></Button>
+    <div className={styles.button}>
+      <Button name={"다운로드"} onClick={(_ev) => pptmaker.mandart()}>
+        만다르트
+      </Button>
+    </div>
   </li>
 );
 
