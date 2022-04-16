@@ -26,7 +26,7 @@ const ScheduleMaker = ({ pptmaker }) => {
           <div className={styles.button}>
             <Button
               name={"다운로드"}
-              onClick={() => pptmaker.mandart()}
+              onClick={(_ev) => pptmaker.mandart()}
             ></Button>
           </div>
         </li>
@@ -39,7 +39,10 @@ const ScheduleMaker = ({ pptmaker }) => {
             }
           />
           <div className={styles.button}>
-            <Button name={"다운로드"} onClick={() => pptmaker.month()}></Button>
+            <Button
+              name={"다운로드"}
+              onClick={(_ev) => pptmaker.month()}
+            ></Button>
           </div>
         </li>
         <li className={styles.schedule}>
@@ -51,7 +54,10 @@ const ScheduleMaker = ({ pptmaker }) => {
             }
           />
           <div className={styles.button}>
-            <Button name={"다운로드"} onClick={() => pptmaker.week()}></Button>
+            <Button
+              name={"다운로드"}
+              onClick={(_ev) => pptmaker.week()}
+            ></Button>
           </div>
         </li>
         <li className={styles.schedule}>
@@ -63,7 +69,10 @@ const ScheduleMaker = ({ pptmaker }) => {
             }
           />
           <div className={styles.button}>
-            <Button name={"다운로드"} />
+            <Button
+              name={"다운로드"}
+              onClick={(_ev) => pptmaker.today()}
+            ></Button>
           </div>
         </li>
       </ul>
