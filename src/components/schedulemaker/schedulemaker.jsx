@@ -51,7 +51,7 @@ const ScheduleMaker = ({ pptmaker }) => {
             }
           />
           <div className={styles.button}>
-            <Button name={"다운로드"}></Button>
+            <Button name={"다운로드"} onClick={() => pptmaker.week()}></Button>
           </div>
         </li>
         <li className={styles.schedule}>
