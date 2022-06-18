@@ -1,8 +1,6 @@
 import React from "react";
 
-import { render, screen } from "@testing-library/react";
 import Banner from "../banner";
-import userEvent from "@testing-library/user-event";
 import renderer from "react-test-renderer";
 
 describe("Banner", () => {
