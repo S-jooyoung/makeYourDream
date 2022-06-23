@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header render 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="logoutBtn"
+  >
+    <button
+      className="button"
+      onClick={[MockFunction]}
+      title="button"
+    >
+      로그아웃
+    </button>
+  </div>
+  <img
+    alt="logo"
+    className="logo"
+    src="/images/loginLogo.png"
+  />
+</header>
+`;
