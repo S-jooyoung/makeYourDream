@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Schedule render 1`] = `
+Array [
+  <h1
+    className="title"
+  >
+    testTitle
+  </h1>,
+  <p
+    className="info"
+  >
+    testInfo
+  </p>,
+]
+`;
